@@ -39,10 +39,6 @@ export const Items = ({ secilendata }) => {
 
   const dispatch = useDispatch();
 
-  const handleClick = () => {
-    dispatch(setBasket());
-  };
-
   return (
     <div className="flex flex-wrap justify-center items-center gap-3 my-5">
       {products.map((item, i) => {
@@ -75,7 +71,7 @@ export const Items = ({ secilendata }) => {
                 <BiCartAdd
                   className="hover:text-white"
                   size={"30px"}
-                  onClick={handleClick}
+                  onClick={() => dispatch(setBasket({ item }))}
                 />
               </div>
             </div>
