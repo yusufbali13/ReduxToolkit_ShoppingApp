@@ -2,15 +2,17 @@ import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router";
 import axios from "axios";
 import { MdAttachMoney } from "react-icons/md";
+import { useDispatch } from "react-redux";
+import { new_item } from "../store/ItemsReducer";
 import { BiCartAdd } from "react-icons/bi";
 import { AiOutlineRead } from "react-icons/ai";
-import { useDispatch, useSelector } from "react-redux";
-import { setBasket } from "../feature/productSlice";
 
 export const Items = ({ secilendata }) => {
   let navigate = useNavigate();
 
   const [products, setProducts] = useState([]);
+
+  const dispatch = useDispatch();
 
   const API_SELECT_PRODUCTS = `https://dummyjson.com/products/category/${secilendata}`;
   const API_ALL_PRODUCTS = `https://dummyjson.com/products`;
@@ -23,21 +25,19 @@ export const Items = ({ secilendata }) => {
     get_select_Products(API_SELECT_PRODUCTS);
   }, [secilendata]);
 
-  //*kategori seçildiğinde gelen veriler
+  //kategori seçildiğinde gelen veriler
   const get_select_Products = (API) => {
     axios(API)
       .then((res) => setProducts(res.data.products))
       .catch((err) => console.log(err));
   };
 
-  //*sayfa ilk render olduğunda gelen veriler
+  //sayfa ilk render olduğunda gelen veriler
   const get_all_products = (API) => {
     axios(API)
       .then((res) => setProducts(res.data.products))
       .catch((err) => console.log(err));
   };
-
-  const dispatch = useDispatch();
 
   return (
     <div className="flex flex-wrap justify-center items-center gap-3 my-5">
@@ -71,7 +71,7 @@ export const Items = ({ secilendata }) => {
                 <BiCartAdd
                   className="hover:text-white"
                   size={"30px"}
-                  onClick={() => dispatch(setBasket({ item }))}
+                  onClick={() => dispatch(new_item(item))}
                 />
               </div>
             </div>

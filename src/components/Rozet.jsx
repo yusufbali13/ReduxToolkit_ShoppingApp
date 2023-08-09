@@ -3,7 +3,6 @@ import Badge from "@mui/material/Badge";
 import { styled } from "@mui/material/styles";
 import IconButton from "@mui/material/IconButton";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
-import { Navigate, useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
 
 const StyledBadge = styled(Badge)(({ theme }) => ({
@@ -16,7 +15,7 @@ const StyledBadge = styled(Badge)(({ theme }) => ({
 }));
 
 export default function Rozet() {
-  const count = useSelector((state) => state.products.count);
+  const count = useSelector((state) => state.items.count);
 
   return (
     <IconButton aria-label="cart">

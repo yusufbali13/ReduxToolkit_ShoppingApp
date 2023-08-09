@@ -1,15 +1,17 @@
 import React from "react";
+import { useDispatch, useSelector } from "react-redux";
 import { useLocation, useParams } from "react-router-dom";
 import { Link } from "react-router-dom";
+import { new_item } from "../store/ItemsReducer";
 import { BsCartPlus } from "react-icons/bs";
-import { useDispatch } from "react-redux";
-import { setBasket } from "../feature/productSlice";
 
 export const ItemDetails = () => {
   const { state } = useLocation();
   const { id } = useParams();
 
   const dispatch = useDispatch();
+
+  const products = useSelector((state) => state.items.products);
 
   return (
     <div className="md:container px-10 mx-auto py-5">
@@ -28,11 +30,10 @@ export const ItemDetails = () => {
                 <p className="text-gray-700 text-base mb-3">
                   Category : {state?.category}
                 </p>
-
                 <BsCartPlus
                   size={"25px"}
                   className="hover:cursor-pointer hover:text-blue-500"
-                  onClick={() => dispatch(setBasket())}
+                  onClick={() => dispatch(new_item(state))}
                 />
               </div>
 
