@@ -29,7 +29,7 @@ function Navs() {
         <div className="flex flex-wrap justify-evenly gap-3 items-center">
           <div>
             <img
-              src="https://img.ws.mms.shopee.com.my/c08f6bd387562ff7dcbb2ec5ce1a8c4b"
+              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTwv5gjD8d5u3NBppyfAgP7o-L02h6XILOLKELciu4hMmHGM5ew2hUOeTN2jqdiRoL7eSA&usqp=CAU"
               className=" h-20 mr-3"
               alt=""
             />
