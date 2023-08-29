@@ -3,7 +3,6 @@ export const CLEAR = "CLEAR";
 export const NEW_ITEM = "NEW_ITEM";
 export const ADD_LINE = "ADD_LINE";
 export const DEC_LINE = "DEC_LINE";
-
 export const delBasketLine = (payload) => ({ type: DEL_LINE, payload });
 export const addNewLine = (payload) => ({ type: ADD_LINE, payload });
 export const basketClear = () => ({ type: CLEAR });

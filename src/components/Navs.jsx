@@ -1,28 +1,8 @@
 import * as React from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import Rozet from "./Rozet";
 
 function Navs() {
-  const [anchorElNav, setAnchorElNav] = React.useState(null);
-  const [anchorElUser, setAnchorElUser] = React.useState(false);
-
-  const handleOpenNavMenu = (event) => {
-    setAnchorElNav(event.currentTarget);
-  };
-
-  const handleOpenUserMenu = (event) => {
-    setAnchorElUser(event.currentTarget);
-  };
-  const handleCloseNavMenu = () => {
-    setAnchorElNav(null);
-  };
-  const handleCloseUserMenu = () => {
-    setAnchorElUser(null);
-  };
-  const handleClick = () => {
-    navigate("/basket");
-  };
-  const navigate = useNavigate();
   return (
     <>
       <nav className="bg-white border-gray-200 dark:bg-gray-900">

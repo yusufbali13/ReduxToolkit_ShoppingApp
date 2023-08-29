@@ -15,8 +15,10 @@ export const Categories = ({ categories }) => {
         onChange={(e) => setsecilendata(e.target.value)}
         className="p-2 w-[300px] border-2 border-inherit rounded-full"
       >
-        {categories.map((items) => (
-          <option value={items}>{items}</option>
+        {categories.map((items, id) => (
+          <option key={id} value={items}>
+            {items}
+          </option>
         ))}
       </select>
 

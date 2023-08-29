@@ -41,9 +41,12 @@ export const Items = ({ secilendata }) => {
 
   return (
     <div className="flex flex-wrap justify-center items-center gap-3 my-5">
-      {products.map((item, i) => {
+      {products.map((item, id) => {
         return (
-          <div className="max-w-sm flex flex-wrap justify-center items-center bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+          <div
+            key={id}
+            className="max-w-sm flex flex-wrap justify-center items-center bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700"
+          >
             <div className="cardImg">
               <img className="rounded-t-lg" src={item?.thumbnail} alt="" />
             </div>

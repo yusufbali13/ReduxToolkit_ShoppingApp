@@ -1,4 +1,3 @@
-import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import {
   basketClear,
@@ -12,7 +11,6 @@ import { AiOutlineMinusCircle } from "react-icons/ai";
 
 export const Basket = () => {
   const basketItem = useSelector((state) => state.items.products);
-  const [secilenSatir, setsecilenSatir] = useState({});
 
   const dispatch = useDispatch();
 
